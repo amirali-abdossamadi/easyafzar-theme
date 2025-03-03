@@ -1,0 +1,141 @@
+/* Admin Styles */
+.easyafzar-admin {
+      background: #0D1117;
+      padding: 20px;
+      border-radius: 8px;
+      color: #E0E0E0;
+  }
+  
+  .easyafzar-admin h1 {
+      color: #E74C3C;
+      margin-bottom: 20px;
+  }
+  
+  .easyafzar-users-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1C2526;
+      border: 1px solid #30363D;
+  }
+  
+  .easyafzar-users-table th,
+  .easyafzar-users-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #30363D;
+  }
+  
+  .easyafzar-users-table th {
+      background: #161B22;
+      color: #E74C3C;
+      font-weight: 500;
+  }
+  
+  .easyafzar-users-table td {
+      color: #D1D5DB;
+  }
+  
+  .easyafzar-users-table tr:hover {
+      background: #2C3437;
+  }
+  .easyafzar-products-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1C2526;
+      border: 1px solid #30363D;
+  }
+  
+  .easyafzar-products-table th,
+  .easyafzar-products-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #30363D;
+  }
+  
+  .easyafzar-products-table th {
+      background: #161B22;
+      color: #E74C3C;
+      font-weight: 500;
+  }
+  
+  .easyafzar-products-table td {
+      color: #D1D5DB;
+  }
+  
+  .easyafzar-products-table tr:hover {
+      background: #2C3437;
+  }
+
+  /* Modal (پاپ‌آپ) */
+.modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .modal-content {
+      background: #1C2526;
+      padding: 30px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 600px;
+      border: 1px solid #30363D;
+      color: #E0E0E0;
+  }
+  
+  .modal-content h2 {
+      color: #E74C3C;
+      margin-bottom: 20px;
+  }
+  
+  .modal-content .form-table th {
+      color: #E74C3C;
+  }
+  
+  .modal-content .form-table input,
+  .modal-content .form-table textarea,
+  .modal-content .form-table select {
+      background: #2C3437;
+      color: #E0E0E0;
+      border: 1px solid #30363D;
+      border-radius: 4px;
+      width: 100%;
+      padding: 8px;
+  }
+  
+  .modal-content .submit {
+      display: flex;
+      gap: 10px;
+  }
+  
+  .modal-content .cancel-modal {
+      background: #666;
+  }
+  
+  .add-product-btn {
+      background: #E74C3C !important;
+      color: #FFFFFF !important;
+  }
+  
+  .add-product-btn:hover {
+      background: #C0392B !important;
+  }
+  
+  .view-product, .view-details, .edit-product, .delete-product {
+      margin-right: 5px;
+  }
+  
+  .delete-product {
+      background: #C0392B !important;
+  }
+  
+  .delete-product:hover {
+      background: #A93226 !important;
+  }

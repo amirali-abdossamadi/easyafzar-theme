@@ -1,9 +1,421 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-  }
-  header, footer {
-      text-align: center;
-      padding: 20px;
-      background: #f4f4f4;
-  }
+    font-family: 'Vazir', 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
+    color: #FFFFFF;
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Logo Animation */
+.easyafzar-logo {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px #E74C3C;
+    text-transform: uppercase;
+}
+
+.easyafzar-logo .letter {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.easyafzar-logo::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #E74C3C, #C0392B);
+    opacity: 0.5;
+    z-index: -1;
+    border-radius: 5px;
+    animation: pulseGradient 3s infinite ease-in-out;
+}
+
+@keyframes pulseGradient {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+.easyafzar-logo:hover .letter {
+    color: #E74C3C;
+    transform: translateY(-2px);
+}
+
+.easyafzar-logo .letter::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(231, 76, 60, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.easyafzar-logo:hover .letter::after {
+    opacity: 1;
+}
+
+.easyafzar-logo .letter:nth-child(1) { animation: letterFade 1s ease 0.1s forwards; }
+.easyafzar-logo .letter:nth-child(2) { animation: letterFade 1s ease 0.2s forwards; }
+.easyafzar-logo .letter:nth-child(3) { animation: letterFade 1s ease 0.3s forwards; }
+.easyafzar-logo .letter:nth-child(4) { animation: letterFade 1s ease 0.4s forwards; }
+.easyafzar-logo .letter:nth-child(5) { animation: letterFade 1s ease 0.5s forwards; }
+.easyafzar-logo .letter:nth-child(6) { animation: letterFade 1s ease 0.6s forwards; }
+.easyafzar-logo .letter:nth-child(7) { animation: letterFade 1s ease 0.7s forwards; }
+.easyafzar-logo .letter:nth-child(8) { animation: letterFade 1s ease 0.8s forwards; }
+.easyafzar-logo .letter:nth-child(9) { animation: letterFade 1s ease 0.9s forwards; }
+
+@keyframes letterFade {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Grok Button */
+.grok-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #E74C3C, #C0392B);
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.grok-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #C0392B, #E74C3C);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.grok-button:hover::before {
+    left: 0;
+}
+
+.grok-button:hover {
+    color: #FFFFFF;
+}
+
+/* Hero Section */
+.hero-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #D1D5DB;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.primary-button, .secondary-button {
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.primary-button {
+    background: #E74C3C;
+    color: #FFFFFF;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.primary-button:hover {
+    background: #C0392B;
+    transform: scale(1.05);
+}
+
+.secondary-button {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* Footer */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.footer-container p {
+    font-size: 14px;
+    color: #D1D5DB;
+}
+
+/* Login Section */
+.login-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.login-section h2 {
+    font-size: 36px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.login-section p {
+    font-size: 18px;
+    color: #D1D5DB;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dashboard Section */
+.dashboard-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.dashboard-subtitle {
+    font-size: 18px;
+    color: #D1D5DB;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+.dashboard-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dashboard-card {
+    background: #1C2526;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    border: 1px solid #30363D;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.5s forwards;
+}
+
+.dashboard-card h3 {
+    font-size: 24px;
+    color: #E74C3C;
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    color: #D1D5DB;
+    margin-bottom: 10px;
+}
+
+.dashboard-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #E74C3C;
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-button:hover {
+    background: #C0392B;
+    transform: scale(1.05);
+}
+
+
+/* Products Section */
+.products-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.products-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.products-subtitle {
+    font-size: 18px;
+    color: #D1D5DB;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.3s forwards;
+}
+
+.products-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    background: #1C2526;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    border: 1px solid #30363D;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.5s forwards;
+}
+
+.product-card h3 {
+    font-size: 24px;
+    color: #E74C3C;
+    margin-bottom: 10px;
+}
+
+.product-type {
+    font-size: 14px;
+    color: #BDC3C7;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #D1D5DB;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.product-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #E74C3C;
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-button:hover {
+    background: #C0392B;
+    transform: scale(1.05);
+}

@@ -14,9 +14,23 @@ function easyafzar_setup() {
 }
 add_action('after_setup_theme', 'easyafzar_setup');
 
-// ثبت استایل و اسکریپت
+// ثبت استایل و اسکریپت برای فرانت‌اند
 function easyafzar_scripts() {
     wp_enqueue_style('easyafzar-frontend', get_template_directory_uri() . '/assets/css/frontend.css');
     wp_enqueue_script('easyafzar-frontend-js', get_template_directory_uri() . '/assets/js/frontend.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'easyafzar_scripts');
+
+// ثبت استایل و اسکریپت برای ادمین
+function easyafzar_admin_scripts() {
+    wp_enqueue_style('easyafzar-admin', get_template_directory_uri() . '/assets/css/admin.css');
+    wp_enqueue_script('easyafzar-admin-js', get_template_directory_uri() . '/assets/js/frontend.js', array('jquery'), '1.0', true);
+}
+add_action('admin_enqueue_scripts', 'easyafzar_admin_scripts');
+
+// حذف متن "proudly powered by WordPress"
+remove_action('wp_footer', 'wp_footer_powered_by');
+function wp_footer_powered_by() {
+    // خالی می‌ذاریم تا متن حذف بشه
+}
+
