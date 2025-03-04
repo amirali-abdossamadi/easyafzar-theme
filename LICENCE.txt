@@ -1,0 +1,18 @@
+# LICENSE
+
+**EasyAfzar Theme - Strict Proprietary License**
+
+Copyright (c) 2024, Amir Ali Abdolsamadi.
+All rights reserved.
+
+## Restrictions
+1. **No Redistribution**: This software may not be copied, distributed, or shared in any form.
+2. **No Modification**: You are not allowed to modify, reverse-engineer, or alter any part of the code.
+3. **No Unauthorized Usage**: This theme can only be used with a valid, legally obtained license.
+4. **No Rebranding**: Uploading, rebranding, or claiming ownership of this theme under another name is strictly prohibited.
+5. **Legal Consequences**: Any violation of these terms will result in legal action, including but not limited to financial penalties and permanent bans from future licensing.
+
+## Enforcement
+Unauthorized use of this software will be met with strict legal action. The author reserves the right to revoke licenses, take down infringing content, and pursue claims against violators.
+
+For inquiries regarding licensing, contact the author directly.
