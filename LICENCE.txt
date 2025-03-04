@@ -63,7 +63,7 @@ This License constitutes the entire agreement between you and EasyAfzar with res
 
 ---
 
-###10. CONTACT INFORMATION
+### 10. CONTACT INFORMATION
 For inquiries regarding this License or to request written permission for any restricted activities, please contact:
 
 **EasyAfzar**  
@@ -75,4 +75,3 @@ For inquiries regarding this License or to request written permission for any re
 **Last Updated: March 4, 2025**
 
 By using this Software, you acknowledge that you have read, understood, and agree to be bound by the terms and conditions of this License. If you do not agree to these terms, do not use the Software.
- > LICENSE
