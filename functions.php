@@ -29,8 +29,9 @@ function easyafzar_admin_scripts() {
 add_action('admin_enqueue_scripts', 'easyafzar_admin_scripts');
 
 // حذف متن "proudly powered by WordPress"
-remove_action('wp_footer', 'wp_footer_powered_by');
+add_filter('wp_footer', function () {
+    remove_action('wp_footer', 'wp_footer_powered_by');
+}, 1);
 function wp_footer_powered_by() {
     // خالی می‌ذاریم تا متن حذف بشه
-}
-
+} 

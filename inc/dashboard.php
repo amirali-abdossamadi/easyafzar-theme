@@ -176,3 +176,24 @@ function easyafzar_render_products_page() {
     </div>
     <?php
 } 
+if (isset($_POST['save_product']) && check_admin_referer('easyafzar_save_product', '_wpnonce')) {
+    $new_product = [
+        'name' => sanitize_text_field($_POST['product_name'] ?? ''),
+        'description' => sanitize_textarea_field($_POST['product_description'] ?? ''),
+        'type' => sanitize_text_field($_POST['product_type'] ?? ''),
+        'price' => floatval($_POST['product_price'] ?? 0),
+        'code' => sanitize_text_field($_POST['product_code'] ?? ''),
+        'date_added' => current_time('mysql'),
+        'status' => 'active'
+    ];
+    $products = get_option('easyafzar_products', []);
+    if (!is_array($products)) {
+        $products = [];
+    }
+    $products[] = $new_product;
+    update_option('easyafzar_products', $products);
+
+    // دیباگ: نمایش داده‌های ذخیره‌شده
+    error_log('Saved products: ' . print_r($products, true));
+    echo '<div class="notice notice-success"><p>' . __('Product added successfully! Check debug.log for saved data.', 'easyafzar') . '</p></div>';
+}
