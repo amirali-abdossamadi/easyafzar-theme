@@ -31,3 +31,28 @@ $current_user = wp_get_current_user();
     </section>
 </main>
 <?php get_footer(); ?>
+<?php
+if (isset($_POST['save_product']) && check_admin_referer('easyafzar_save_product', '_wpnonce')) {
+    error_log('Form submitted');
+    $new_product = [
+        'name' => sanitize_text_field($_POST['product_name'] ?? ''),
+        'description' => sanitize_textarea_field($_POST['product_description'] ?? ''),
+        'type' => sanitize_text_field($_POST['product_type'] ?? ''),
+        'price' => floatval($_POST['product_price'] ?? 0),
+        'code' => sanitize_text_field($_POST['product_code'] ?? ''),
+        'date_added' => current_time('mysql'),
+        'status' => 'active'
+    ];
+    error_log(print_r($new_product, true));
+
+    $products = get_option('easyafzar_products', []);
+    if (!is_array($products)) {
+        $products = [];
+    }
+    $products[] = $new_product;
+    $result = update_option('easyafzar_products', $products);
+    error_log('Update option result: ' . ($result ? 'true' : 'false'));
+
+    // اضافه کردن پیام موفقیت
+    echo '<div class="notice notice-success is-dismissible"><p>' . __('Product added successfully!', 'easyafzar') . '</p></div>';
+}
